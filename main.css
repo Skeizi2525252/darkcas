@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 70px; /* Space for bottom nav */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-icon {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Balance and Deposit styles */
+.balance-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 8px 15px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.balance {
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deposit-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.deposit-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation styles */
+.main-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.nav-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    color: #fff;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.nav-item span {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    .balance-container {
+        padding: 6px 12px;
+    }
+
+    .deposit-btn {
+        padding: 4px 8px;
+        font-size: 13px;
+    }
+
+    .nav-item {
+        padding: 4px 8px;
+    }
+
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-item span {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        padding: 8px 10px;
+    }
+
+    .user-info {
+        gap: 10px;
+    }
+
+    .balance-container {
+        padding: 5px 10px;
+    }
+
+    .deposit-btn {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+
+    .nav-item {
+        padding: 3px 6px;
+    }
+
+    .nav-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .nav-item span {
+        font-size: 10px;
+    }
+}
+
+/* Landscape mode */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding-bottom: 60px;
+    }
+
+    .main-nav {
+        padding: 5px 0;
+    }
+
+    .nav-item {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .nav-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .nav-item span {
+        font-size: 12px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .nav-item {
+        padding: 8px 15px;
+    }
+
+    .nav-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .nav-item span {
+        font-size: 14px;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 2000px) {
+    .container {
+        max-width: 1800px;
+    }
+
+    .nav-item {
+        padding: 10px 20px;
+    }
+
+    .nav-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .nav-item span {
+        font-size: 16px;
+    }
+} 

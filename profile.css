@@ -1,0 +1,247 @@
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 80px auto 0;
+    padding: 20px;
+}
+
+.profile-header {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.avatar-container {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-icon {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-id {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.username-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#username {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.edit-icon {
+    width: 20px;
+    height: 20px;
+    fill: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: fill 0.2s ease;
+}
+
+.edit-icon:hover {
+    fill: #fff;
+}
+
+.stats-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.stat-item:first-child {
+    padding-top: 0;
+}
+
+.stat-icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+.stat-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.referral-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.referral-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.referral-icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+.referral-link-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#referralLink {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+.copy-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.copy-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+
+.referral-info {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    text-align: center;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        margin-top: 60px;
+        padding: 15px;
+    }
+
+    .profile-header {
+        padding: 15px;
+    }
+
+    .avatar-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .avatar-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    #username {
+        font-size: 20px;
+    }
+
+    .stats-container,
+    .referral-section {
+        padding: 15px;
+    }
+
+    .stat-item {
+        padding: 12px 0;
+    }
+
+    .stat-value {
+        font-size: 16px;
+    }
+} 

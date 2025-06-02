@@ -1,0 +1,135 @@
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+.error-container {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.2s ease forwards;
+}
+
+.error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.error-title {
+    color: #fff;
+    font-size: 72px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideDown 0.2s ease 0.1s forwards;
+}
+
+.error-image {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.2s ease 0.2s forwards;
+}
+
+.error-image img {
+    max-width: 400px;
+    height: auto;
+}
+
+.error-message {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.2s ease 0.3s forwards;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.nav-item.active {
+    opacity: 1;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+    fill: currentColor;
+}
+
+.nav-item span {
+    font-size: 12px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .error-title {
+        font-size: 48px;
+    }
+    
+    .error-message {
+        font-size: 18px;
+    }
+    
+    .error-image img {
+        max-width: 300px;
+    }
+} 

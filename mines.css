@@ -1,0 +1,336 @@
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.game-field {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.mines-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.mine-cell {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.mine-cell svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.mine-cell:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mine-cell:hover svg {
+    transform: scale(1.1);
+}
+
+.mine-cell.revealed {
+    background: rgba(0, 255, 0, 0.2);
+}
+
+.mine-cell.mine {
+    background: rgba(255, 0, 0, 0.2);
+}
+
+.mine-cell.mine svg {
+    animation: explode 0.3s ease-out;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bet-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.bet-input-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.bet-input {
+    flex: 1;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+.bet-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.bet-button {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.bet-button:hover {
+    background: #ffed4a;
+}
+
+.bet-button.playing {
+    background: #ffd700;
+}
+
+.bet-button.playing .button-text {
+    color: #00ff00;
+}
+
+.bet-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.multiplier-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.multiplier-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.multiplier-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.multiplier-btn.active {
+    background: #0066ff;
+    color: white;
+}
+
+.multiplier-indicator {
+    width: 100%;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.multiplier-scroll {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.multiplier-values {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.multiplier {
+    color: #fff;
+    font-size: 16px;
+    white-space: nowrap;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.multiplier.active {
+    color: #00ff00;
+    opacity: 1;
+    font-weight: bold;
+    background: rgba(0, 255, 0, 0.1);
+}
+
+.multiplier.passed {
+    color: #00ff00;
+    opacity: 0.7;
+}
+
+.user-balance {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-balance.insufficient {
+    color: #ff4444;
+    border-color: #ff4444;
+}
+
+.notification {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 0, 0, 0.9);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 1000;
+    animation: fadeInOut 1.4s ease;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+    }
+
+    .game-field {
+        width: 250px;
+        height: 250px;
+    }
+
+    .bet-input-container {
+        flex-direction: column;
+    }
+
+    .bet-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 15px;
+        margin: 0 10px;
+    }
+
+    .game-field {
+        width: 200px;
+        height: 200px;
+    }
+
+    .multiplier-buttons {
+        gap: 8px;
+    }
+
+    .multiplier-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.back-icon {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+} 
